@@ -17,6 +17,7 @@
         <spring.data.jpa.version>2.7.18</spring.data.jpa.version>
         <hibernate.version>5.6.15.Final</hibernate.version>
         <gcp.app.engine.plugin.version>2.7.0</gcp.app.engine.plugin.version>
+        <appengine.projectId>encoded-rider-464306-e8</appengine.projectId>
     </properties>
 
     <dependencies>
@@ -76,7 +77,8 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.13.4.1</version>
+            <version>2.18.3</version>
+            <type>jar</type>
         </dependency>
         
         <dependency>
@@ -120,8 +122,11 @@
                         <projectId>${appengine.projectId}</projectId>
                         <promote>true</promote>
                     </deploy>
+                    <appEngineDirectory>${project.basedir}/src/main/webapp/WEB-INF</appEngineDirectory>
                 </configuration>
             </plugin>
+
+
         </plugins>
     </build>
 </project>
