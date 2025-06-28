@@ -114,7 +114,13 @@
                 <artifactId>appengine-maven-plugin</artifactId>
                 <version>${gcp.app.engine.plugin.version}</version>
                 <configuration>
-                    </configuration>
+                    <projectId>${appengine.projectId}</projectId>
+                    <version>GCLOUD_CONFIG</version>
+                    <deploy>
+                        <projectId>${appengine.projectId}</projectId>
+                        <promote>true</promote>
+                    </deploy>
+                </configuration>
             </plugin>
         </plugins>
     </build>
