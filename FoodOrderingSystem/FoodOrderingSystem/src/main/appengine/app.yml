@@ -1,0 +1,27 @@
+# Chọn môi trường thực thi là Java 11
+runtime: java11
+
+# Chọn loại máy chủ (instance)
+# F1 là loại cơ bản, phù hợp cho các ứng dụng nhỏ và gói miễn phí
+instance_class: F1
+
+# Cấu hình cách xử lý các yêu cầu đến
+handlers:
+- url: /.*
+  script: auto
+
+# Định nghĩa các biến môi trường để kết nối đến Cloud SQL
+# Bạn sẽ đặt giá trị thực tế cho các biến này trong Google Cloud Console
+# Điều này giúp giữ an toàn cho thông tin nhạy cảm
+env_variables:
+  # Thay thế bằng Instance Connection Name của Cloud SQL của bạn
+  INSTANCE_CONNECTION_NAME: 'your-project-id:your-region:your-instance-id'
+  
+  # Thay thế bằng tên Database bạn đã tạo
+  DB_NAME: 'food_ordering_db'
+  
+  # Thay thế bằng tên người dùng của Database
+  DB_USER: 'postgres'
+  
+  # Thay thế bằng mật khẩu bạn đã tạo cho người dùng Database
+  DB_PASS: 'your-db-password'
